@@ -21,21 +21,24 @@ public class Labirinto {
 			sorteioSalaAtual = sT.nextInt(31);
 		} while (sorteioSalaAtual == 0);
 			
-		this.salaAtual = sorteioSalaAtual;
+		this.salaAtual = sorteioSalaAtual; // preenchendo a sala atual com o sorteio
 		
-		
-		
+				
 		
 	}// final construtor labirinto
 
 	public int getSalaAtual() {
 		return salaAtual;
 	}
-
+		
 	public void setSalaAtual(int salaAtual) {
 		this.salaAtual = salaAtual;
 	}
 
+	public Sala getObjSalaAtual(){ // pegando a sala atual 
+		return this.sala[this.salaAtual];
+	}
+	
 	private void lerArquivo() { // lendo o TXT
 		int contador = 1;
 		String linha = "";
@@ -107,6 +110,12 @@ public class Labirinto {
 					break;
 				case "west":
 					sala.setDestinoPorta("portaOeste", Integer.parseInt(arrayLinha[i]));
+					break;
+				case "up":
+					sala.setDestinoPorta("escadaCima", Integer.parseInt(arrayLinha[i]));
+					break;
+				case "down":
+					sala.setDestinoPorta("escadaBaixo", Integer.parseInt(arrayLinha[i]));
 					break;
 				default:
 					break;

@@ -1,12 +1,15 @@
 import java.util.Random;
 
+import com.senac.SimpleJava.Graphics.Image;
+
 public class Porta {
 	static Random sT = new Random();
-	private int corCadeado = 0;
+	private int corPorta = 0;
 	private int destino = -1;
 	private int sorteioSituacao = 0;
 	private Armadilha armadilha;
 	private Inimigo inimigo;
+	private Image porta;
 
 	
 	public Porta(){
@@ -15,11 +18,14 @@ public class Porta {
 		//this.Situacao(); // Sortear situação da porta quando inicia
 	}
 		
-	
 	public int getDestino() {
 		return destino;
 	}
 
+	public Armadilha getArmadilha(){
+		return this.armadilha;
+	}
+	
 	public void setDestino(int destino) {
 		this.destino = destino;
 	}
@@ -44,10 +50,10 @@ public class Porta {
 		if (sorteioArmadilha == 1) {
 			this.armadilha = new Armadilha();
 		}
-			
+	
 		
 		
-	}
+	}	
 
 	public void InimigoPorta() { 
 
